@@ -4,21 +4,23 @@
 #![feature(naked_functions)]
 
 // component mmu
-#[cfg(feature = "a0")]
-extern crate mmu_identity as mmu;
 #[cfg(any(feature = "mmu_enable", feature = "mmu_disable"))]
 extern crate mmu_alterable as mmu;
+#[cfg(feature = "a0")]
+extern crate mmu_identity as mmu;
 #[cfg(any(feature = "sv39", feature = "sv48"))]
 extern crate mmu_scheme as mmu;
+#[cfg(any(feature = "sv39_a3", feature = "sv48_a3"))]
+extern crate mmu_scheme_a3 as mmu;
 
 pub use mmu::KERNEL_BASE;
 
 mod lang_items;
-mod trap;
 pub mod stdio;
+mod trap;
 
-use riscv::register::stvec;
 use riscv::register::sstatus;
+use riscv::register::stvec;
 
 const TASK_STACK_SIZE: usize = 0x40000;
 
@@ -119,5 +121,4 @@ pub fn terminate() -> ! {
     }
 }
 
-pub fn init() {
-}
+pub fn init() {}

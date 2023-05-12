@@ -1,12 +1,13 @@
 [package]
-name = "a2"
+name = "mmu-scheme-a3"
 version = "0.1.0"
 edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
 [features]
-sv39 = ["libos/sv39-a3"]
-sv48 = ["libos/sv48-a3"]
+sv39 = []
+sv48 = []
 
 [dependencies]
-libos = { path = "../../libos" }
+riscv = "0.10"

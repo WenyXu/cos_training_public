@@ -11,6 +11,8 @@ mmu_enable = ["mmu-alterable/enable"]
 mmu_disable = ["mmu-alterable/disable"]
 sv39 = ["mmu-scheme/sv39"]
 sv48 = ["mmu-scheme/sv48"]
+sv39_a3 = ["mmu-scheme-a3/sv39"]
+sv48_a3 = ["mmu-scheme-a3/sv48"]
 
 [dependencies]
 riscv = "0.10"
@@ -18,3 +20,4 @@ sbi-rt = { version = "0.0.2", features = ["legacy"] }
 mmu-identity = { path = "../mmu_identity", optional = true }
 mmu-alterable = { path = "../mmu_alterable", optional = true }
 mmu-scheme = { path = "../mmu_scheme", optional = true }
+mmu-scheme-a3 = { path = "../mmu_scheme_a3", optional = true }

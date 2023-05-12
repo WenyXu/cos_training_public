@@ -1,12 +1,12 @@
 [package]
-name = "a2"
+name = "a3"
 version = "0.1.0"
 edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 [features]
-sv39 = ["libos/sv39-a3"]
-sv48 = ["libos/sv48-a3"]
+sv39 = ["libos/sv39_a3"]
+sv48 = ["libos/sv48_a3"]
 
 [dependencies]
 libos = { path = "../../libos" }
